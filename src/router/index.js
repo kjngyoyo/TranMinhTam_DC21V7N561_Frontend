@@ -23,6 +23,7 @@ const routes = [
         name: "contact.add",
         component: () => import("@/views/ContactAdd.vue")
 }
+
 ];
 
 const router  = createRouter({

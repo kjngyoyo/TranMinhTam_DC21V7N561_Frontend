@@ -20,6 +20,26 @@
       <Field name="phone" type="tel" class="form-control" />
       <ErrorMessage name="phone" class="error-feedback" />
     </div>
+    <div class="form-group">
+        <label>Nghề nghiệp</label>
+        <Field type = "radio" name="job" value="Sinh viên"/> Sinh viên
+        <Field type = "radio" name="job" value="Giáo viên"/> Giáo viên
+        <Field type = "radio" name="job" value="Giao hàng"/> Giao hàng
+        <Field type = "radio" name="job" value="Tài xế"/> Tài xế
+          <Field type="radio" name="job" value="Khác" class="ml-3" v-model="selectedJob" /> Khác
+          <div v-if="selectedJob === 'Khác'" class="mt-2">
+            <Field name="job_other" type="text"placeholder="Nhập nghề nghiệp khác..." class="form-control" />
+          </div>
+          <ErrorMessage name="job" class="error-feedback" />
+    </div>
+    <div class="form-group">
+        <label>Giới tính</label>
+        <Field type = "radio" name="gender" value="Nam"/> Nam
+        <Field type = "radio" name="gender" value="Nữ"/> Nữ
+        <Field type = "radio" name="gender" value="Khác"/> Khác
+        <br />
+          <ErrorMessage name="job" class="error-feedback" />
+    </div>
     <div class="form-group form-check">
       <Field name="favorite" type="checkbox" class="form-check-input" />
       <label for="favorite" class="form-check-label">
@@ -35,7 +55,6 @@
         Thoát
       </button>
     </div>
-    
   </Form>
 </template>
 <script>
